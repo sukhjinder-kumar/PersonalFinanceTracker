@@ -52,6 +52,7 @@ def plot_summary(df: pd.DataFrame, kind: str = "bar"):
     plt.xlabel("Month")
     plt.ylabel("Amount")
     plt.tight_layout()
+    plt.savefig('Images/monthly_spending_by_category.png')  # Save inside container to shared volume
     plt.show()
 
 

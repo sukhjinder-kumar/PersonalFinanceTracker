@@ -4,6 +4,8 @@ This is a **Personal Finance Tracker** built using **Python**, **SQLite**, and *
 
 ## 🚀 How to Run
 
+### Method-1
+
 1. Install dependencies
 
 ```bash
@@ -27,6 +29,34 @@ python analysis.py
 ```bash
 deactivate
 ```
+
+### Method-2 (Docker)
+
+1. Build the docker image, with `personal_finance_tracker` as the name of the image.
+```bash
+docker build -t personal_finance_tracker .
+```
+
+2. Run the docker image
+```bash
+docker run --rm -it personal_finance_tracker bash
+```
+
+3. You can run the files using `python populate.py` or `python analysis.py`. 
+
+4. To delete the docker image, first list all the docker images using `docker images` and then run
+```bash
+docker rmi <image_name>:<tag>
+# Or
+docker rmi <image_id>
+
+# Example 
+# docker rmi personal_finance_tracker:latest
+```
+
+### Method-3 (Makefile)
+
+We have also implemented `Makefile`, so you can just run `make build` to create the docker image, after which `make populate` and `make analysis` to run the `populate.py` and `analysis.py` files. You can also do everything in one shot using `make run`!
 
 ## 📸 Screenshot
 
