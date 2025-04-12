@@ -2,8 +2,6 @@
 
 This is a **Personal Finance Tracker** built using **Python**, **SQLite**, and **Pandas** to demonstrate skills in relational databases, data analysis, and structured schema design. It allows you to manage expenses, categorize transactions, tag them, and analyze spending patterns.
 
----
-
 ## 🚀 How to Run
 
 1. Install dependencies
