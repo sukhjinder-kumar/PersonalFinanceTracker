@@ -1,0 +1,55 @@
+@startuml
+entity accounts {
+  * id : INTEGER
+  --
+  name : TEXT
+  type : TEXT
+}
+
+entity categories {
+  * id : INTEGER
+  --
+  name : TEXT
+  parent_id : INTEGER
+}
+
+entity transactions {
+  * id : INTEGER
+  --
+  date : DATE
+  amount : REAL
+  description : TEXT
+  category_id : INTEGER
+  account_id : INTEGER
+}
+
+entity recurring {
+  * id : INTEGER
+  --
+  description : TEXT
+  amount : REAL
+  frequency : TEXT
+  next_due : DATE
+  category_id : INTEGER
+  account_id : INTEGER
+}
+
+entity tags {
+  * id : INTEGER
+  --
+  name : TEXT
+}
+
+entity transaction_tags {
+  * transaction_id : INTEGER
+  * tag_id : INTEGER
+}
+
+categories ||--o{ categories : parent
+categories ||--o{ transactions : category
+accounts ||--o{ transactions : account
+transactions ||--o{ transaction_tags : transaction
+tags ||--o{ transaction_tags : tag
+categories ||--o{ recurring : category
+accounts ||--o{ recurring : account
+@enduml
